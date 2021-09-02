@@ -84,14 +84,15 @@ modules:
   - name: pyqt5
     buildsystem: simple
     build-commands:
-      - pwd
-      - sip-build --confirm-license --build-dir ./build --target-dir /app/lib/python3.8/site-packages
-        --api-dir /app/share/qt5/qsci/api/python --concatenate 1 --no-make --no-designer-plugin
-        --no-qml-plugin --no-tools --enable QtCore --enable QtWidgets --enable QtGui
-        --enable QtPrintSupport --enable QtOpenGL --enable QtSvg --enable QtNetwork
-        --verbose
-      - make -j$(nproc) -C build
-      - make install -C build
+      - sip-install --confirm-license --build-dir ./build --target-dir /app/lib/python3.8/site-packages
+        --concatenate 1 --no-designer-plugin --no-qml-plugin --no-tools --disable QtQml
+        --disable QtBluetooth --disable QtDBus --disable QtDesigner --disable QtHelp
+        --disable QtMultimedia --disable QtMultimediaWidgets --disable QtNfc
+        --disable QtPositioning --disable QtLocation --disable QtQuick --disable QtQuickWidgets
+        --disable QtSensors --disable QtSerialPort --disable QtSql --disable QtTest
+        --disable QtTextToSpeech --disable QtWebChannel --disable QtWebKit
+        --disable QtWebKitWidgets --disable QtWebSockets --disable QtX11Extras --disable QtXml
+        --disable QtXmlPatterns --verbose --jobs $(nproc)
     sources:
       - type: archive
         url: https://files.pythonhosted.org/packages/8e/a4/d5e4bf99dd50134c88b95e926d7b81aad2473b47fde5e3e4eac2c69a8942/PyQt5-5.15.4.tar.gz
