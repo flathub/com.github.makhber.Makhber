@@ -1,7 +1,7 @@
 app-id: com.github.makhber.Makhber
 runtime: org.kde.Platform
 sdk: org.kde.Sdk
-runtime-version: '5.15'
+runtime-version: '5.15-21.08'
 command: makhber
 finish-args:
   - --share=ipc
@@ -84,7 +84,7 @@ modules:
   - name: pyqt5
     buildsystem: simple
     build-commands:
-      - sip-install --confirm-license --build-dir ./build --target-dir /app/lib/python3.8/site-packages
+      - sip-install --confirm-license --build-dir ./build --target-dir /app/lib/python3.9/site-packages
         --concatenate 1 --no-designer-plugin --no-qml-plugin --no-tools --disable QtQml
         --disable QtBluetooth --disable QtDBus --disable QtDesigner --disable QtHelp
         --disable QtMultimedia --disable QtMultimediaWidgets --disable QtNfc
