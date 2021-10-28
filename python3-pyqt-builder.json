@@ -16,8 +16,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/c1/47/dfc9c342c9842bbe0036c7f763d2d6686bcf5eb1808ba3e170afdb282210/pyparsing-2.4.7.tar.gz",
-            "sha256": "c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1",
+            "url": "https://files.pythonhosted.org/packages/a0/e4/2bae99e2bbdeb17c7cb9c2f7ef6022383ffcab8461d2ec339ff19ce4a969/pyparsing-3.0.3.tar.gz",
+            "sha256": "9e3511118010f112a4b4b435ae50e1eaa610cda191acb9e421d60cf5fde83455",
             "x-checker-data": {
                 "type": "pypi",
                 "name": "pyparsing"
@@ -25,8 +25,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/63/9b/e7cd8c57cd38df3bf8e95750257f10703dcab15ef9050c0dc03259746e87/PyQt-builder-1.12.1.tar.gz",
-            "sha256": "9a71e9cac134702467bd93ed9c7a5a47dc4386d93501bdcafb14cd08b3041d40",
+            "url": "https://files.pythonhosted.org/packages/8b/5f/1bd49787262ddce37b826ef49dcccf5a9970facf0ed363dee5ee233e681d/PyQt-builder-1.12.2.tar.gz",
+            "sha256": "f62bb688d70e0afd88c413a8d994bda824e6cebd12b612902d1945c5a67edcd7",
             "x-checker-data": {
                 "type": "pypi",
                 "name": "PyQt-builder"
@@ -34,8 +34,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/ed/74/57851ed1cd8d996bbb3103b17798d59ddda3f7f8245b826c01aadfc3d66c/sip-6.3.1.tar.gz",
-            "sha256": "2f9cd6ce0e19226d53d62ad6ba81a62f624626f14924724eab2a23390d4dc684",
+            "url": "https://files.pythonhosted.org/packages/c4/de/76c2927ea8f74dc4909c9affeba4c0191c43a4aefbe2118cc69b2cbd8461/sip-6.4.0.tar.gz",
+            "sha256": "42ec368520b8da4a0987218510b1b520b4981e4405086c1be384733affc2bcb0",
             "x-checker-data": {
                 "type": "pypi",
                 "name": "sip"
