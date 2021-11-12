@@ -12,8 +12,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/a0/e4/2bae99e2bbdeb17c7cb9c2f7ef6022383ffcab8461d2ec339ff19ce4a969/pyparsing-3.0.3.tar.gz",
-            "sha256": "9e3511118010f112a4b4b435ae50e1eaa610cda191acb9e421d60cf5fde83455",
+            "url": "https://files.pythonhosted.org/packages/ab/61/1a1613e3dcca483a7aa9d446cb4614e6425eb853b90db131c305bd9674cb/pyparsing-3.0.6.tar.gz",
+            "sha256": "d9bdec0013ef1eb5a84ab39a3b3868911598afa494f5faa038647101504e2b81",
             "x-checker-data": {
                 "type": "pypi",
                 "name": "pyparsing"
