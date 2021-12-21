@@ -23,8 +23,8 @@ modules:
       - /lib/pkgconfig
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/gsl/gsl-2.7.tar.gz
-        sha256: efbbf3785da0e53038be7907500628b466152dbc3c173a87de1b5eba2e23602b
+        url: https://ftp.gnu.org/gnu/gsl/gsl-2.7.1.tar.gz
+        sha256: dcb0fbd43048832b757ff9942691a8dd70026d5da0ff85601e52687f6deeb34b
         x-checker-data:
           type: anitya
           project-id: 1267
@@ -95,8 +95,8 @@ modules:
         QtX11Extras --disable QtXml --disable QtXmlPatterns --verbose --jobs $(nproc)
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/72/bf/4e7c66eefa9ede1ec01d065d220373667f4ca3285a83a6430eefc254904c/PyQt5-5.15.5.tar.gz
-        sha256: b411b7a8fa03901c9feb1dcbac7ea1fc3ce20b9ae682762b777cd5398749ca2b
+        url: https://files.pythonhosted.org/packages/3b/27/fd81188a35f37be9b3b4c2db1654d9439d1418823916fe702ac3658c9c41/PyQt5-5.15.6.tar.gz
+        sha256: 80343bcab95ffba619f2ed2467fd828ffeb0a251ad7225be5fc06dcc333af452
         x-checker-data:
           type: pypi
           name: PyQt5
@@ -110,11 +110,11 @@ modules:
       - -DMAKHBER_SCRIPTING_PYTHON=ON
     sources:
       - type: archive
-        url: https://github.com/Makhber/makhber/releases/download/0.9.4.2/makhber-0.9.4.2-src.tar.xz
-        sha256: 198a4aa6ab63a7b8a9f170d207ad08dd35b3098c10990ad2a8bca584f3d0619f
+        url: https://github.com/Makhber/makhber/releases/download/0.9.5/Makhber-0.9.5-src.tar.xz
+        sha256: cad9a3525cfca1f7f7b37a91907099e6ad8b231ac3ecc35d8236da6370dc22a5
         x-checker-data:
           type: json
           url: https://api.github.com/repos/Makhber/makhber/releases/latest
           version-query: .tag_name
-          url-query: .assets[] | select(.name==\"Makhber-\" + $version + \"-src.tar.xz\")
+          url-query: .assets[] | select(.name=="Makhber-" + $version + "-src.tar.xz")
             | .browser_download_url
