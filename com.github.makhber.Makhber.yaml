@@ -39,6 +39,7 @@ modules:
     cleanup:
       - /include
       - /lib/pkgconfig
+      - /lib/cmake
     sources:
       - type: archive
         url: https://github.com/beltoforion/muparser/archive/v2.3.3-1.tar.gz
