@@ -50,6 +50,32 @@ modules:
           stable-only: true
           url-template: https://github.com/beltoforion/muparser/archive/v$version.tar.gz
 
+  - name: qwt
+    buildsystem: simple
+    build-commands:
+      - sed -i "s|^\\s*QWT_INSTALL_PREFIX.*$|QWT_INSTALL_PREFIX=\"/app\"|g" qwtconfig.pri
+      - sed -i "s|^QWT_CONFIG\\s*+=\\s*QwtDesigner$|#|g" qwtconfig.pri
+      - sed -i "s|^QWT_CONFIG\\s*+=\\s*QwtExamples$|#|g" qwtconfig.pri
+      - sed -i "s|^QWT_CONFIG\\s*+=\\s*QwtPlayground$|#|g" qwtconfig.pri
+      - sed -i "s|^QWT_CONFIG\\s*+=\\s*QwtTests$|#|g" qwtconfig.pri
+      - qmake CONFIG-=debug_and_release CONFIG+=release qwt.pro
+      - make -j$(nproc)
+      - make install
+    sources:
+      - type: archive
+        url: https://downloads.sourceforge.net/qwt/qwt-6.2.0.tar.bz2
+        sha256: 9194f6513955d0fd7300f67158175064460197abab1a92fa127a67a4b0b71530
+        x-checker-data:
+          type: anitya
+          project-id: 4147
+          stable-only: true
+          url-template: http://downloads.sourceforge.net/qwt/qwt-%{version}.tar.bz2
+    cleanup:
+      - /lib/pkgconfig
+      - /include
+      - /doc
+      - /features
+
   - name: glu
     config-opts:
       - --disable-static
@@ -113,12 +139,7 @@ modules:
       - -DMAKHBER_DOWNLOAD_LINKS=OFF
       - -DMAKHBER_SCRIPTING_PYTHON=ON
     sources:
-      - type: archive
-        url: https://github.com/Makhber/makhber/releases/download/0.9.5/Makhber-0.9.5-src.tar.xz
-        sha256: cad9a3525cfca1f7f7b37a91907099e6ad8b231ac3ecc35d8236da6370dc22a5
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/Makhber/makhber/releases/latest
-          version-query: .tag_name
-          url-query: .assets[] | select(.name=="Makhber-" + $version + "-src.tar.xz")
-            | .browser_download_url
+      - type: git
+        url: https://github.com/Makhber/makhber
+        branch: master
+        commit: 26711261539d748924bed7acef1aeeba2d914b04
