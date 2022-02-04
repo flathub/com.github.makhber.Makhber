@@ -21,6 +21,7 @@ modules:
       - /include
       - /lib/*.la
       - /lib/pkgconfig
+      - /share
     sources:
       - type: archive
         url: https://ftp.gnu.org/gnu/gsl/gsl-2.7.1.tar.gz
@@ -38,10 +39,11 @@ modules:
     cleanup:
       - /include
       - /lib/pkgconfig
+      - /lib/cmake
     sources:
       - type: archive
-        url: https://github.com/beltoforion/muparser/archive/v2.3.2.tar.gz
-        sha256: b35fc84e3667d432e3414c8667d5764dfa450ed24a99eeef7ee3f6647d44f301
+        url: https://github.com/beltoforion/muparser/archive/v2.3.3-1.tar.gz
+        sha256: 91d26d8274ae9cd9c776ee58250aeddc6b574f369eafd03b25045b858a2b8177
         x-checker-data:
           type: anitya
           project-id: 2033
@@ -85,7 +87,7 @@ modules:
     buildsystem: simple
     build-commands:
       - sip-install --confirm-license --build-dir ./build --target-dir /app/lib/python3.9/site-packages
-        --concatenate 1 --no-designer-plugin --no-qml-plugin --no-tools --disable
+        --concatenate $(nproc) --no-designer-plugin --no-qml-plugin --no-tools --disable
         QtQml --disable QtBluetooth --disable QtDBus --disable QtDesigner --disable
         QtHelp --disable QtMultimedia --disable QtMultimediaWidgets --disable QtNfc
         --disable QtRemoteObjects --disable QtPositioning --disable QtLocation --disable
@@ -100,6 +102,8 @@ modules:
         x-checker-data:
           type: pypi
           name: PyQt5
+    cleanup:
+      - /lib/python3.9/site-packages/PyQt5/bindings
 
   - name: makhber
     buildsystem: cmake-ninja
