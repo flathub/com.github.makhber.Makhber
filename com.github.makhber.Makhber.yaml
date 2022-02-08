@@ -16,7 +16,6 @@ modules:
   - name: gsl
     config-opts:
       - --disable-static
-      - CFLAGS="-O2 -flto"
     cleanup:
       - /bin
       - /include
@@ -37,7 +36,6 @@ modules:
     buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
-      - -DCMAKE_INTERPROCEDURAL_OPTIMIZATION=ON
     cleanup:
       - /include
       - /lib/pkgconfig
@@ -60,7 +58,7 @@ modules:
       - sed -i "s|^QWT_CONFIG\\s*+=\\s*QwtExamples$|#|g" qwtconfig.pri
       - sed -i "s|^QWT_CONFIG\\s*+=\\s*QwtPlayground$|#|g" qwtconfig.pri
       - sed -i "s|^QWT_CONFIG\\s*+=\\s*QwtTests$|#|g" qwtconfig.pri
-      - qmake CONFIG-=debug_and_release CONFIG+=release CONFIG+=ltcg qwt.pro
+      - qmake CONFIG-=debug_and_release CONFIG+=release qwt.pro
       - make -j$(nproc)
       - make install
     sources:
@@ -82,7 +80,6 @@ modules:
     config-opts:
       - --disable-static
       - --disable-debug
-      - CFLAGS="-O2 -flto"
     sources:
       - type: archive
         url: https://mesa.freedesktop.org/archive/glu/glu-9.0.2.tar.gz
@@ -116,15 +113,14 @@ modules:
     buildsystem: simple
     build-commands:
       - sip-install --confirm-license --build-dir ./build --target-dir /app/lib/python3.9/site-packages
-        --concatenate $(nproc) --no-designer-plugin --no-qml-plugin --no-tools --disable
-        QtQml --disable QtBluetooth --disable QtDBus --disable QtDesigner --disable
+        --no-designer-plugin --no-qml-plugin --no-tools --disable QtQml
+        --disable QtBluetooth --disable QtDBus --disable QtDesigner --disable
         QtHelp --disable QtMultimedia --disable QtMultimediaWidgets --disable QtNfc
         --disable QtRemoteObjects --disable QtPositioning --disable QtLocation --disable
         QtQuick --disable QtQuickWidgets --disable QtSensors --disable QtSerialPort
         --disable QtSql --disable QtTest --disable QtTextToSpeech --disable QtWebChannel
         --disable QtWebKit --disable QtWebKitWidgets --disable QtWebSockets --disable
         QtX11Extras --disable QtXml --disable QtXmlPatterns --verbose --jobs $(nproc)
-        --qmake-settings "CONFIG+=ltcg"
     sources:
       - type: archive
         url: https://files.pythonhosted.org/packages/3b/27/fd81188a35f37be9b3b4c2db1654d9439d1418823916fe702ac3658c9c41/PyQt5-5.15.6.tar.gz
