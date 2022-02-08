@@ -17,8 +17,6 @@ modules:
     buildsystem: autotools
     config-opts:
       - --disable-static
-    build-options:
-      cflags: "-O2 -flto"
     cleanup:
       - /bin
       - /include
