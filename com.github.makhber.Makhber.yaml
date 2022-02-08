@@ -14,9 +14,11 @@ finish-args:
 
 modules:
   - name: gsl
+    buildsystem: autotools
     config-opts:
       - --disable-static
-      - CFLAGS="-O2 -flto"
+    build-options:
+      cflags: "-O2 -flto"
     cleanup:
       - /bin
       - /include
@@ -79,10 +81,12 @@ modules:
       - /features
 
   - name: glu
+    buildsystem: autotools
     config-opts:
       - --disable-static
       - --disable-debug
-      - CFLAGS="-O2 -flto"
+    build-options:
+      cflags: "-O2 -flto"
     sources:
       - type: archive
         url: https://mesa.freedesktop.org/archive/glu/glu-9.0.2.tar.gz
