@@ -143,4 +143,4 @@ modules:
       - type: git
         url: https://github.com/Makhber/makhber
         branch: master
-        commit: 26711261539d748924bed7acef1aeeba2d914b04
+        commit: 6b41540a19e0c737d0eb5b5e18b9c2cc6be8233b
