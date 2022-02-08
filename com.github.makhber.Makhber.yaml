@@ -38,6 +38,7 @@ modules:
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
       - -DCMAKE_INTERPROCEDURAL_OPTIMIZATION=ON
+      - -CMAKE_POLICY_DEFAULT_CMP0069=NEW
     cleanup:
       - /include
       - /lib/pkgconfig
@@ -83,8 +84,6 @@ modules:
     config-opts:
       - --disable-static
       - --disable-debug
-    build-options:
-      cflags: "-O2 -flto"
     sources:
       - type: archive
         url: https://mesa.freedesktop.org/archive/glu/glu-9.0.2.tar.gz
