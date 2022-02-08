@@ -38,7 +38,7 @@ modules:
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
       - -DCMAKE_INTERPROCEDURAL_OPTIMIZATION=ON
-      - -CMAKE_POLICY_DEFAULT_CMP0069=NEW
+      - -DCMAKE_POLICY_DEFAULT_CMP0069=NEW
     cleanup:
       - /include
       - /lib/pkgconfig
