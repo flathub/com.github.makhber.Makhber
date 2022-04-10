@@ -89,6 +89,7 @@ modules:
       - /include
       - /share
 
+  - python3-flit_core.json
   - python3-pyqt-builder.json
 
   - name: pyqt5-sip
