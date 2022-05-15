@@ -223,7 +223,6 @@ modules:
       - -DMAKHBER_SEARCH_FOR_UPDATES=OFF
       - -DMAKHBER_DOWNLOAD_LINKS=OFF
       - -DMAKHBER_SCRIPTING_PYTHON=ON
-      - -DMAKHBER_ENABLE_LTO=OFF
     sources:
       - type: git
         url: https://github.com/Makhber/makhber
