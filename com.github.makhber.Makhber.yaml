@@ -225,5 +225,5 @@ modules:
       - -DMAKHBER_SCRIPTING_PYTHON=ON
     sources:
       - type: git
-        url: https://github.com/Makhber/makhber
-        branch: master
+        url: https://github.com/Makhber/makhber/releases/download/0.10.0-alpha/Makhber-0.10.0-alpha-src.tar.xz
+        sha256: 2ec433d5cf7da9f7baa019121b05fac0874c870f293bd5ff8711f111d3efd5a0
