@@ -1,7 +1,7 @@
 app-id: com.github.makhber.Makhber
 runtime: org.kde.Platform
 sdk: org.kde.Sdk
-runtime-version: 5.15-21.08
+runtime-version: '6.3'
 command: makhber
 finish-args:
   - --share=ipc
@@ -50,6 +50,32 @@ modules:
           project-id: 2033
           stable-only: true
           url-template: https://github.com/beltoforion/muparser/archive/v$version.tar.gz
+
+  - name: qwt
+    buildsystem: simple
+    build-commands:
+      - sed -i "s|^\\s*QWT_INSTALL_PREFIX.*$|QWT_INSTALL_PREFIX=\"/app\"|g" qwtconfig.pri
+      - sed -i "s|^QWT_CONFIG\\s*+=\\s*QwtDesigner$|#|g" qwtconfig.pri
+      - sed -i "s|^QWT_CONFIG\\s*+=\\s*QwtExamples$|#|g" qwtconfig.pri
+      - sed -i "s|^QWT_CONFIG\\s*+=\\s*QwtPlayground$|#|g" qwtconfig.pri
+      - sed -i "s|^QWT_CONFIG\\s*+=\\s*QwtTests$|#|g" qwtconfig.pri
+      - qmake CONFIG-=debug_and_release CONFIG+=release qwt.pro
+      - make -j$(nproc)
+      - make install
+    sources:
+      - type: archive
+        url: https://downloads.sourceforge.net/qwt/qwt-6.2.0.tar.bz2
+        sha256: 9194f6513955d0fd7300f67158175064460197abab1a92fa127a67a4b0b71530
+        x-checker-data:
+          type: anitya
+          project-id: 4147
+          stable-only: true
+          url-template: http://downloads.sourceforge.net/qwt/qwt-$version.tar.bz2
+    cleanup:
+      - /lib/pkgconfig
+      - /include
+      - /doc
+      - /features
 
   - name: glu
     buildsystem: autotools
@@ -155,39 +181,38 @@ modules:
     cleanup:
       - '*'
 
-  - name: pyqt5-sip
+  - name: pyqt6-sip
     buildsystem: simple
     build-commands:
       - python3 setup.py install --prefix=/app
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/39/5f/fd9384fdcb9cd0388088899c110838007f49f5da1dd1ef6749bfb728a5da/PyQt5_sip-12.11.0.tar.gz
-        sha256: b4710fd85b57edef716cc55fae45bfd5bfac6fc7ba91036f1dcc3f331ca0eb39
+        url: https://files.pythonhosted.org/packages/39/fc/f889254efda90418e367df28da9d14ac64ca19a9d93f44355d21ac562b0f/PyQt6_sip-13.4.0.tar.gz
+        sha256: 6d87a3ee5872d7511b76957d68a32109352caf3b7a42a01d9ee20032b350d979
         x-checker-data:
           type: pypi
-          name: PyQt5-sip
+          name: PyQt6-sip
 
-  - name: pyqt5
+  - name: pyqt6
     buildsystem: simple
     build-commands:
       - sip-install --confirm-license --build-dir ./build --target-dir /app/lib/python3.9/site-packages
-        --concatenate $(nproc) --no-designer-plugin --no-qml-plugin --no-tools --disable
-        QtQml --disable QtBluetooth --disable QtDBus --disable QtDesigner --disable
-        QtHelp --disable QtMultimedia --disable QtMultimediaWidgets --disable QtNfc
-        --disable QtRemoteObjects --disable QtPositioning --disable QtLocation --disable
-        QtQuick --disable QtQuickWidgets --disable QtSensors --disable QtSerialPort
-        --disable QtSql --disable QtTest --disable QtTextToSpeech --disable QtWebChannel
-        --disable QtWebKit --disable QtWebKitWidgets --disable QtWebSockets --disable
-        QtX11Extras --disable QtXml --disable QtXmlPatterns --verbose --jobs $(nproc)
+        --no-designer-plugin --no-qml-plugin --no-tools
+        --disable QtBluetooth --disable QtDBus --disable QtDesigner --disable QtHelp
+        --disable QtMultimedia --disable QtMultimediaWidgets --disable QtNfc --disable QtPositioning
+        --disable QtQml --disable QtQuick --disable QtQuick3D --disable QtQuickWidgets
+        --disable QtRemoteObjects --disable QtSensors --disable QtSerialPort --disable QtSql
+        --disable QtSvgWidgets --disable QtTest --disable QtWebChannel --disable QtWebSockets --disable QtXml
+        --verbose --jobs $(nproc)
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/e1/57/2023316578646e1adab903caab714708422f83a57f97eb34a5d13510f4e1/PyQt5-5.15.7.tar.gz
-        sha256: 755121a52b3a08cb07275c10ebb96576d36e320e572591db16cfdbc558101594
+        url: https://files.pythonhosted.org/packages/a3/ab/c5989de70eceed91abf5f828d99817462ff75f41558e9f5a6f5213f0932c/PyQt6-6.3.1.tar.gz
+        sha256: 8cc6e21dbaf7047d1fc897e396ccd9710a12f2ef976563dad65f06017d2c9757
         x-checker-data:
           type: pypi
-          name: PyQt5
+          name: PyQt6
     cleanup:
-      - /lib/python3.9/site-packages/PyQt5/bindings
+      - /lib/python3.9/site-packages/PyQt6/bindings
 
   - name: makhber
     buildsystem: cmake-ninja
@@ -197,12 +222,7 @@ modules:
       - -DMAKHBER_DOWNLOAD_LINKS=OFF
       - -DMAKHBER_SCRIPTING_PYTHON=ON
     sources:
-      - type: archive
-        url: https://github.com/Makhber/makhber/releases/download/0.9.6/Makhber-0.9.6-src.tar.xz
-        sha256: cf40233bf1720d5ba52a557e172fb3efebd8eb04c9e1bc99701dde798140e375
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/Makhber/makhber/releases/latest
-          version-query: .tag_name
-          url-query: .assets[] | select(.name=="Makhber-" + $version + "-src.tar.xz")
-            | .browser_download_url
+      - type: git
+        url: https://github.com/Makhber/makhber
+        branch: master
+        commit: f4c1654377267e61218d6eaad1718501455b4e6a
