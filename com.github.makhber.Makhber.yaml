@@ -103,7 +103,7 @@ modules:
           packagetype: bdist_wheel
           type: pypi
     cleanup:
-      - '*'
+      - "*"
 
   - name: python3-pyqt-builder
     buildsystem: simple
@@ -149,7 +149,7 @@ modules:
           packagetype: bdist_wheel
           type: pypi
     cleanup:
-      - '*'
+      - "*"
 
   - name: python3-pyqt5-sip
     buildsystem: simple
@@ -201,5 +201,6 @@ modules:
           type: json
           url: https://api.github.com/repos/Makhber/makhber/releases/latest
           version-query: .tag_name
-          url-query: .assets[] | select(.name=="Makhber-" + $version + "-src.tar.xz")
-            | .browser_download_url
+          url-query: .assets[] | select(.name=="Makhber-" + $version + "-src.tar.xz") | .browser_download_url
+      - type: patch
+        path: fix-appdata.patch
