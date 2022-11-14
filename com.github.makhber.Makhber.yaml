@@ -96,14 +96,14 @@ modules:
         --prefix=${FLATPAK_DEST} "flit_core" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/ad/38/80992c4cb490a05474c886850ec818276d09c0a6722bd5b43bc487818ac7/flit_core-3.7.1-py3-none-any.whl
-        sha256: e454fdbf68c7036e1c7435ec7479383f9d9a1650ca5b304feb184eba1efcdcef
+        url: https://files.pythonhosted.org/packages/04/ac/f91a0219e0d4162762f218e4876bf328f16e4d283e691cd7f42a02b22634/flit_core-3.8.0-py3-none-any.whl
+        sha256: 64a29ec845164a6abe1136bf4bc5ae012bdfe758ed42fc7571a9059a7c80bd83
         x-checker-data:
           name: flit_core
           packagetype: bdist_wheel
           type: pypi
     cleanup:
-      - "*"
+      - '*'
 
   - name: python3-pyqt-builder
     buildsystem: simple
@@ -136,8 +136,8 @@ modules:
           packagetype: bdist_wheel
           type: pypi
       - type: file
-        url: https://files.pythonhosted.org/packages/90/05/07013eaf1b67fb3d3e6424edab495cde912d80d9ae4ea54c2b70a4bae9ac/sip-6.7.2.tar.gz
-        sha256: 325016c787d0bff20999c420339ad816fbfd39a7c49b2c4dcda12b63c379dbda
+        url: https://files.pythonhosted.org/packages/08/f6/06ad8d62331b302b68fbd730eedec8346213db71857128cb3b8309fee2ad/sip-6.7.4.tar.gz
+        sha256: 9dbf8a0e7c8d76d1642e2fdd3f53e6a522f7c30980e527763c45760c2505cfbf
         x-checker-data:
           name: sip
           type: pypi
@@ -149,7 +149,7 @@ modules:
           packagetype: bdist_wheel
           type: pypi
     cleanup:
-      - "*"
+      - '*'
 
   - name: python3-pyqt5-sip
     buildsystem: simple
@@ -195,12 +195,11 @@ modules:
       - -DMAKHBER_SCRIPTING_PYTHON=ON
     sources:
       - type: archive
-        url: https://github.com/Makhber/makhber/releases/download/0.9.6.1/Makhber-0.9.6.1-src.tar.xz
-        sha256: 6d4182bf37d797cd0549aaf0f2734816173cd2f102639a10ba2d8aebe5857920
+        url: https://github.com/Makhber/makhber/releases/download/0.9.7/Makhber-0.9.7-src.tar.xz
+        sha256: a0e38fef7fc385e1dcd790fe4a25ff5811dc93599abc38f53d9172aa8d9616fb
         x-checker-data:
           type: json
           url: https://api.github.com/repos/Makhber/makhber/releases/latest
           version-query: .tag_name
-          url-query: .assets[] | select(.name=="Makhber-" + $version + "-src.tar.xz") | .browser_download_url
-      - type: patch
-        path: fix-appdata.patch
+          url-query: .assets[] | select(.name=="Makhber-" + $version + "-src.tar.xz")
+            | .browser_download_url
