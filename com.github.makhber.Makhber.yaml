@@ -148,15 +148,15 @@ modules:
         url: https://files.pythonhosted.org/packages/a3/58/35da89ee790598a0700ea49b2a66594140f44dec458c07e8e3d4979137fc/ply-3.11-py2.py3-none-any.whl
         sha256: 096f9b8350b65ebd2fd1346b12452efe5b9607f7482813ffca50c22722a807ce
       - type: file
-        url: https://files.pythonhosted.org/packages/ff/2b/cdc9a8b4cdf27b0eea55a8dc441d5863d2da6a4397c8ab4db126f3b411dd/PyQt_builder-1.14.0-py3-none-any.whl
-        sha256: c3aee05fe98f4c0eba4d74010e77adfa2287a339a06e7e258bf3dcc154464014
+        url: https://files.pythonhosted.org/packages/db/90/45d79242eea982dc8cf7f7ec7d93261692e20bb3c210c8dbe26ab7b65368/PyQt_builder-1.14.1-py3-none-any.whl
+        sha256: e4472165225a1c4bb1b46a9fb1ced07d9387acfd286102aa24f1347d3fd60d70
         x-checker-data:
           name: PyQt_builder
           packagetype: bdist_wheel
           type: pypi
       - type: file
-        url: https://files.pythonhosted.org/packages/fd/9b/8e727256983e5b1d975f8dfce6f477b5ab6bada14a00b07fa3db51fcd6fe/sip-6.7.5.tar.gz
-        sha256: 9655d089e1d0c5fbf66bde11558a874980729132b5bd0c2ae355ac1a7b893ab4
+        url: https://files.pythonhosted.org/packages/b0/32/e4821b4f32836293068edba3036bf3de07a0aaae465214ee280c677f3860/sip-6.7.6.tar.gz
+        sha256: 21d39b5b1956eefb912e93a4c10b9db252bc86302c36589742525345bfd2b2ea
         x-checker-data:
           name: sip
           type: pypi
@@ -177,8 +177,8 @@ modules:
         --prefix=${FLATPAK_DEST} "pyqt5-sip" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/39/5f/fd9384fdcb9cd0388088899c110838007f49f5da1dd1ef6749bfb728a5da/PyQt5_sip-12.11.0.tar.gz
-        sha256: b4710fd85b57edef716cc55fae45bfd5bfac6fc7ba91036f1dcc3f331ca0eb39
+        url: https://files.pythonhosted.org/packages/d2/f4/4c3e5fc1584f5a2964cfc89bf420cfcc59aba0b1f2d08446e2b491a21ed5/PyQt5_sip-12.11.1.tar.gz
+        sha256: 97d3fbda0f61edb1be6529ec2d5c7202ae83aee4353e4b264a159f8c9ada4369
         x-checker-data:
           type: pypi
           name: PyQt5-sip
@@ -197,8 +197,8 @@ modules:
         QtX11Extras --disable QtXml --disable QtXmlPatterns --verbose --jobs $(nproc)
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/e1/57/2023316578646e1adab903caab714708422f83a57f97eb34a5d13510f4e1/PyQt5-5.15.7.tar.gz
-        sha256: 755121a52b3a08cb07275c10ebb96576d36e320e572591db16cfdbc558101594
+        url: https://files.pythonhosted.org/packages/c1/c3/76c52be757e2e07e2f76dfda0e89546a14c1b97004cc7e126851764370b3/PyQt5-5.15.8.tar.gz
+        sha256: bc85e3efb9135c56c8b88157c8825005fb7cd0f14babd93976778aae82eda360
         x-checker-data:
           type: pypi
           name: PyQt5
