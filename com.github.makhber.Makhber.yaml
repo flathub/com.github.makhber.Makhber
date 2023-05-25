@@ -96,8 +96,8 @@ modules:
         --prefix=${FLATPAK_DEST} "flit_core" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/04/ac/f91a0219e0d4162762f218e4876bf328f16e4d283e691cd7f42a02b22634/flit_core-3.8.0-py3-none-any.whl
-        sha256: 64a29ec845164a6abe1136bf4bc5ae012bdfe758ed42fc7571a9059a7c80bd83
+        url: https://files.pythonhosted.org/packages/38/45/618e84e49a6c51e5dd15565ec2fcd82ab273434f236b8f108f065ded517a/flit_core-3.9.0-py3-none-any.whl
+        sha256: 7aada352fb0c7f5538c4fafeddf314d3a6a92ee8e2b1de70482329e42de70301
         x-checker-data:
           name: flit_core
           packagetype: bdist_wheel
@@ -122,8 +122,8 @@ modules:
         url: https://files.pythonhosted.org/packages/a3/58/35da89ee790598a0700ea49b2a66594140f44dec458c07e8e3d4979137fc/ply-3.11-py2.py3-none-any.whl
         sha256: 096f9b8350b65ebd2fd1346b12452efe5b9607f7482813ffca50c22722a807ce
       - type: file
-        url: https://files.pythonhosted.org/packages/12/f9/1e0f17741e52442b0dfc5aee7e44a10e09335713093608654e02a0b6c1c1/PyQt_builder-1.15.0-py3-none-any.whl
-        sha256: 7e33ee7f0fb608379f5107ed9cb3cb6623838d470626a89feaa86da663a93abf
+        url: https://files.pythonhosted.org/packages/44/f9/d836feeda500b2aeab4d95dda2d1c41d7b6a5e3e15a80ed3eb72096d9236/PyQt_builder-1.15.1-py3-none-any.whl
+        sha256: e15b8fdf47380636a1016e735435214720d7c18569f7f3a028b7d2982f872946
         x-checker-data:
           name: PyQt_builder
           packagetype: bdist_wheel
