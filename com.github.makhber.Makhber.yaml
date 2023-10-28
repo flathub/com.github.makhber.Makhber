@@ -185,8 +185,8 @@ modules:
       - -DMAKHBER_SCRIPTING_PYTHON=ON
     sources:
       - type: archive
-        url: https://github.com/Makhber/makhber/releases/download/0.9.7/Makhber-0.9.7-src.tar.xz
-        sha256: a0e38fef7fc385e1dcd790fe4a25ff5811dc93599abc38f53d9172aa8d9616fb
+        url: https://github.com/Makhber/makhber/releases/download/0.9.8/Makhber-0.9.8-src.tar.xz
+        sha256: f51d1da43c50e6663b06ccd949b1d6d53f0d8219c779b845612c91e874d930cb
         x-checker-data:
           type: json
           url: https://api.github.com/repos/Makhber/makhber/releases/latest
