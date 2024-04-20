@@ -119,8 +119,8 @@ modules:
         url: https://files.pythonhosted.org/packages/a3/58/35da89ee790598a0700ea49b2a66594140f44dec458c07e8e3d4979137fc/ply-3.11-py2.py3-none-any.whl
         sha256: 096f9b8350b65ebd2fd1346b12452efe5b9607f7482813ffca50c22722a807ce
       - type: file
-        url: https://files.pythonhosted.org/packages/61/26/a0a1ef876c4842b8ef081a7813ed3e693bb33caa866913f1b73fef3802a7/PyQt_builder-1.15.4-py3-none-any.whl
-        sha256: 2dd20ee5f513b137c2abbfd439302d7c6df321fbd9fde17142bb7aff65f5c635
+        url: https://files.pythonhosted.org/packages/e8/7d/8401b9a8566cdc155930f69e10acd35cbec3b99e77f9917a9b911f97ba41/PyQt_builder-1.16.1-py3-none-any.whl
+        sha256: 591ed1d5c5f1877f25746c4ccc27b50f50389a131b05ff9b69a84d620473ae8f
         x-checker-data:
           name: PyQt_builder
           packagetype: bdist_wheel
