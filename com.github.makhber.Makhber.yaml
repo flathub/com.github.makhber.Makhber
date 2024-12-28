@@ -100,8 +100,8 @@ modules:
           packagetype: bdist_wheel
           type: pypi
       - type: file
-        url: https://files.pythonhosted.org/packages/a2/7c/e3ff1467ac5e1e094c210a877c75dd872d9110f8e602cb7c0a4d620fd47c/PyQt_builder-1.17.0-py3-none-any.whl
-        sha256: b8ee3a078918b4e178f1d0c7a621fa161a7f46884bfa46304dcb025459039ce8
+        url: https://files.pythonhosted.org/packages/7d/8a/13b60760c7837d98309272ca7f7ebb82f172f18f0131cacaf220675afa74/PyQt_builder-1.17.1-py3-none-any.whl
+        sha256: d7b6a5775d4981592cc0f1dee3172c5f35ecb3b853842669dbd9b9c333e2e512
         x-checker-data:
           name: PyQt_builder
           packagetype: bdist_wheel
