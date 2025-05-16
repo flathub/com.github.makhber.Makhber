@@ -93,22 +93,22 @@ modules:
         --prefix=${FLATPAK_DEST} "pyqt-builder" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/88/ef/eb23f262cca3c0c4eb7ab1933c3b1f03d021f2c48f54763065b6f0e321be/packaging-24.2-py3-none-any.whl
-        sha256: 09abb1bccd265c01f4a3aa3f7a7db064b36514d2cba19a2f694fe6150451a759
+        url: https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl
+        sha256: 29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484
         x-checker-data:
           name: packaging
           packagetype: bdist_wheel
           type: pypi
       - type: file
-        url: https://files.pythonhosted.org/packages/a2/7c/e3ff1467ac5e1e094c210a877c75dd872d9110f8e602cb7c0a4d620fd47c/PyQt_builder-1.17.0-py3-none-any.whl
-        sha256: b8ee3a078918b4e178f1d0c7a621fa161a7f46884bfa46304dcb025459039ce8
+        url: https://files.pythonhosted.org/packages/a7/c8/027cb80c99de9bb64aafcf3f5d67c128523e0af08edf18987ea8eb5c4be9/PyQt_builder-1.18.1-py3-none-any.whl
+        sha256: 59ba2b1df2692986f3b3d3ba7395a6476c54cab0cc0ece18030ffba574657afc
         x-checker-data:
           name: PyQt_builder
           packagetype: bdist_wheel
           type: pypi
       - type: file
-        url: https://files.pythonhosted.org/packages/0b/b5/aafbb1f35d53ae590d5c0455edc0694a355c3dac22a88392421789c4edd1/sip-6.9.1-py3-none-any.whl
-        sha256: 071d8b920fdc1761330964abed829178ddb5154097b9fa4306b2fc6c6d9e57fc
+        url: https://files.pythonhosted.org/packages/b9/a9/3e2d8a1f5100117fe490ebee3e857e1c138d19d25667b25c7a0922fde2fb/sip-6.11.0-py3-none-any.whl
+        sha256: 9a85e76f687323407c2f8501337c7b84328bdd19bd6498e2a6f6d2d896ffa684
         x-checker-data:
           name: sip
           packagetype: bdist_wheel
@@ -123,8 +123,8 @@ modules:
         --prefix=${FLATPAK_DEST} "pyqt5-sip" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/3c/cd/f6f957107447bc53e398f6149f55a7f335c434f201e77dcfb8a3c20dc42c/pyqt5_sip-12.16.1.tar.gz
-        sha256: 8c831f8b619811a32369d72339faa50ae53a963f5fdfa4d71f845c63e9673125
+        url: https://files.pythonhosted.org/packages/01/79/086b50414bafa71df494398ad277d72e58229a3d1c1b1c766d12b14c2e6d/pyqt5_sip-12.17.0.tar.gz
+        sha256: 682dadcdbd2239af9fdc0c0628e2776b820e128bec88b49b8d692fe682f90b4f
         x-checker-data:
           type: pypi
           name: PyQt5-sip
