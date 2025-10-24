@@ -100,15 +100,15 @@ modules:
           packagetype: bdist_wheel
           type: pypi
       - type: file
-        url: https://files.pythonhosted.org/packages/51/80/cbf9b332e01fc61e04c844560b59632842e93ef1e78a25c9caca03e7ab84/pyqt_builder-1.18.2-py3-none-any.whl
-        sha256: 7688a6bdb655275f397ba9b0024c765e90fc8700529fe5b6497960795232802c
+        url: https://files.pythonhosted.org/packages/36/02/9671bb3cd635ae3b710c0f96c2c8e4bba85802dfd114f0bd88dc12196730/pyqt_builder-1.19.0-py3-none-any.whl
+        sha256: a1150ef6bb0fc2677ec78470a47d915ceeea7d1e77ea33d86f3408ed48bd78d1
         x-checker-data:
           name: PyQt_builder
           packagetype: bdist_wheel
           type: pypi
       - type: file
-        url: https://files.pythonhosted.org/packages/d5/6f/058f858087560a89e66c661a9f7a21bf87138b207ed1252aedd0ff5033a6/sip-6.13.0-py3-none-any.whl
-        sha256: de7188d7551f084208173b7be6d262d6b94ebe234dc598cb0b6568a421941e10
+        url: https://files.pythonhosted.org/packages/c5/ec/17cfdfcc511b821ef76b06d843140f6a4c19fac18764b6a96b23352b3988/sip-6.14.0-py3-none-any.whl
+        sha256: 35fe63c3e2862b12656a2c50e622cc471143e7cb8d56ac639eb2990be3352970
         x-checker-data:
           name: sip
           packagetype: bdist_wheel
