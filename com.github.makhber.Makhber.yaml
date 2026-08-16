@@ -95,6 +95,11 @@ modules:
       - type: archive
         url: https://downloads.sourceforge.net/project/liborigin/liborigin/3.0/liborigin-3.0.3.tar.gz
         sha256: b394e3bf633888f9f4a3e1449d7c7eb39b778a2e657424177a04cde4afe6965a
+        x-checker-data:
+          type: anitya
+          project-id: 1697
+          stable-only: true
+          url-template: https://downloads.sourceforge.net/project/liborigin/liborigin/${version%.*}/liborigin-$version.tar.gz
     cleanup:
       - /bin/opj2dat
       - /lib/liborigin.a
